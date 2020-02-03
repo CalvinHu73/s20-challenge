@@ -3,4 +3,48 @@
 body {
   padding: 1em;
   background-color: lightblue;
+  margin: 0 auto;
+  text-align: center;
+}
+#questions {
+ margin: 0 10%;
+}
+#prompt {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0px 0px 0px;
+}
+.options {
+  font-size: 14px;
+  margin: 0px;
+}
+.option {
+  width: 0px 40px;
+}
+button {
+  margin: 2px 0px;
+  font-weight: bold;
+  font-weight: 400;
+  text-align: left;
+  padding: 10px 20px;
+  width: 100%;
+}
+button:hover {
+  background: lightcyan;
+}
+.unclickedButton {
+  color: black;
+  background: wheat;
+}
+.clickedButton {
+  color: white;
+  background-color: blue;
+}
+#result {
+  /*need to fill*/
+  color: white;
+  background-color: blue;
+  width: 80%;
+  margin: 40px 10%;
 }

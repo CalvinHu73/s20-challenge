@@ -68,3 +68,49 @@ const data = {
 }
 
 // Write your code below...
+
+
+
+data.questions.forEach(createQuestion);
+
+function createQuestion(item, index) {
+    document.getElementById("questions").innerHTML += "<div><p id='prompt'>" + (index + 1) + ". " + item.prompt + "</p></div><div class='options'>";
+    optionCount = 0;
+    for (let [key, value] of Object.entries(item.options)) {
+        var button = document.createElement('button');
+        button.innerHTML = key + ": " + value;
+        button.setAttribute('class','unclickedButton');
+        document.getElementsByClassName("options")[index].innerHTML += "<div class='option'></div>";
+        var option = document.getElementsByClassName("options")[index].getElementsByClassName("option")[optionCount];
+        optionCount++;
+        option.appendChild(button);
+        button.addEventListener('click', function() { //event listener is not adding for some reason. idk why.
+            if(button.className == 'clickedButton') {
+                button.setAttribute('class','unclickedButton');
+                //need code to subtract 1 from this option's count
+            } else {
+                for (let [key, value] of Object.entries(options)) {
+                    count2 = 0;
+                    opt = document.getElementsByClassName("options")[index].getElementsByClassName("option")[count2];
+                    if (opt.className == "clickedButton") {
+                        opt.setAttribute('class','unclickedButton');
+                        //need some code to subtract 1 from this option's count, ABC or D
+                    }
+                    count2++
+                }
+                button.setAttribute('class','unclickedButton');
+                //need code to increment this option's count
+            }
+        });
+      }
+    document.getElementById("questions").innerHTML += "</div>"
+}
+
+//STILL NEED TO IMPLEMENT THE SHOW RESULTS.
+//I would use take the individual counts of each option. take the highest count,
+//I also have to make sure each question is answered. to do this, I can sum up 
+//The counts and make sure that it equals the number of questions.
+//If the sum equals the amount of questions, display a section that shows the result
+
+//I am unsure how to implement counts for the options.
+
